@@ -10,7 +10,12 @@ def get_data():
     return jsonify(sample_data)
 
 
-
+@app.route('/user/<string:name>')
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })
 
 @app.route('/api/hello', methods=['GET'])
 def hello():
