@@ -52,28 +52,12 @@ def user(name):
         "status": "active"
     })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/api/hello', methods=['GET'])
 def hello():
     data= {"Hey there!": "Welcome to the API"}
 
     return jsonify(data),404
     
-
-
-
 @app.route('/api/addition/<int:num1>/<int:num2>', methods=['GET'])
 def addition(num1, num2):
     result = num1 + num2

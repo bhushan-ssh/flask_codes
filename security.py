@@ -2,8 +2,6 @@ from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_security import Security, SQLAlchemyUserDatastore, UserMixin, RoleMixin, login_required
 
-
-
 db = SQLAlchemy()
 
 class User(db.Model, UserMixin):
@@ -35,8 +33,6 @@ app.config['SECURITY_PASSWORD_SALT'] = 'some_salt'
 
 db.init_app(app)
 
-
-
 def create_database():
     with app.app_context():
         db.create_all()
@@ -64,17 +60,6 @@ def create_database():
 
         db.session.commit()
         print("Database and default users created.")
-
-
-
-
-
-
-
-
-
-
-
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
 
