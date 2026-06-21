@@ -96,6 +96,37 @@ def user(name):
         "status": "active"
     })
 
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })@app.route('/user/<string:name>')
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })@app.route('/user/<string:name>')
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })@app.route('/user/<string:name>')
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })@app.route('/user/<string:name>')
+def user(name):
+    return jsonify({
+        "username": name,
+        "status": "active"
+    })
+
 @app.route('/api/addition_req', methods=['GET'])
 def addition_req():
     req_data = request.get_json()
