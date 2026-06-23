@@ -10,122 +10,37 @@ def get_data():
     return jsonify(sample_data)
 
 
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
-@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-
 @app.route('/api/hello', methods=['GET'])
 def hello():
-    data= {"Hey there!": "Welcome to the API"}
+    data = {"Hey there!": "Welcome to the API"}
+    return jsonify(data), 200
 
-    return jsonify(data),404
-    
 @app.route('/api/addition/<int:num1>/<int:num2>', methods=['GET'])
 def addition(num1, num2):
     result = num1 + num2
     return jsonify({'result': result})
+
 @app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
 def user(name):
     return jsonify({
         "username": name,
         "status": "active"
     })
 
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })@app.route('/user/<string:name>')
-def user(name):
-    return jsonify({
-        "username": name,
-        "status": "active"
-    })
+@app.route('/api/subtract/<int:num1>/<int:num2>', methods=['GET'])
+def subtract(num1, num2):
+    result = num1 - num2
+    return jsonify({'result': result})
+
+@app.route('/api/multiply/<int:num1>/<int:num2>', methods=['GET'])
+def multiply(num1, num2):
+    result = num1 * num2
+    return jsonify({'result': result})
+
+@app.route('/api/echo', methods=['POST'])
+def echo():
+    data = request.get_json()
+    return jsonify({'echo': data}), 200
 
 @app.route('/api/addition_req', methods=['GET'])
 def addition_req():
