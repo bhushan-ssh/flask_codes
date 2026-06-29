@@ -49,6 +49,47 @@ def addition_req():
     # return jsonify(req_data)
     return jsonify("recieved data successfully"),200
 
+@app.route('/api/divide/<int:num1>/<int:num2>', methods=['GET'])
+def divide(num1, num2):
+    if num2 == 0:
+        return jsonify({'error': 'Division by zero'}), 400
+    result = num1 / num2
+    return jsonify({'result': result})
+
+@app.route('/api/modulo/<int:num1>/<int:num2>', methods=['GET'])
+def modulo(num1, num2):
+    if num2 == 0:
+        return jsonify({'error': 'Division by zero'}), 400
+    result = num1 % num2
+    return jsonify({'result': result})
+
+@app.route('/api/power/<int:base>/<int:exponent>', methods=['GET'])
+def power(base, exponent):
+    result = base ** exponent
+    return jsonify({'result': result})
+
+@app.route('/api/calculate', methods=['POST'])
+def calculate():
+    data = request.get_json()
+    operation = data.get('operation')
+    num1 = data.get('num1')
+    num2 = data.get('num2')
+    
+    if operation == 'add':
+        result = num1 + num2
+    elif operation == 'subtract':
+        result = num1 - num2
+    elif operation == 'multiply':
+        result = num1 * num2
+    elif operation == 'divide':
+        if num2 == 0:
+            return jsonify({'error': 'Division by zero'}), 400
+        result = num1 / num2
+    else:
+        return jsonify({'error': 'Unknown operation'}), 400
+    
+    return jsonify({'result': result}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True) 
