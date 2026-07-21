@@ -10,6 +10,8 @@ def get_data():
     return jsonify(sample_data)
 
 
+
+
 @app.route('/api/hello', methods=['GET'])
 def hello():
     data = {"Hey there!": "Welcome to the API"}
