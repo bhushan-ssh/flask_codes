@@ -1,10 +1,5 @@
 # Flask Codes
 
-
-
-
-
-
 Lightweight example Flask API used for learning and practicing basic routes
 and simple request/response handling.
 
